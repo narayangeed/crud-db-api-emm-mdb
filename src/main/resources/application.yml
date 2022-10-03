@@ -1,0 +1,46 @@
+server:
+   port: 9091
+   servlet:
+      context-path: /hrms-db-api
+
+logging:
+   file:
+      name: hrms-db-api
+
+spring:     
+   application:
+      name: hrms-db-api  
+   boot:
+      admin:
+         client:
+            enabled: false
+            autoRegistration: true
+            url: http://localhost:6060/
+            
+management:
+   server:
+      port: 5051
+   endpoints:
+      web:
+         exposure:
+            include: "*"
+
+
+
+#Eureka client related settings 
+
+eureka:
+   client:
+      enabled: false
+      registerWithEureka: true
+      fetchRegistry: true
+      service-url:
+         defaultZone: http://localhost:8761/eureka/
+   instance:
+      hostname: localhost
+
+      
+
+
+
+
